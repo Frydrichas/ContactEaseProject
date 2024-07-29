@@ -1,0 +1,24 @@
+[
+    {
+        "first_name": "uno",
+        "last_name": "uno",
+        "birth": "uno",
+        "address": "uno",
+        "contact_note": "uno",
+        "contact_infos": {
+            "phone": "031",
+            "email": "federico.salvioni@gmail.com"
+        }
+    },
+    {
+        "first_name": "prova",
+        "last_name": "test",
+        "birth": "test",
+        "address": "test",
+        "contact_note": "test",
+        "contact_infos": {
+            "linkedin": "nuovo_linkedin",
+            "phone": "031"
+        }
+    }
+]
