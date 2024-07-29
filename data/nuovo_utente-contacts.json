@@ -1,13 +1,1 @@
-[
-    {
-        "first_name": "nome",
-        "last_name": "cognome",
-        "birth": "nascita",
-        "address": "indirizzo",
-        "contact_note": "amico",
-        "contact_infos": {
-            "phone": "031539951",
-            "linkedin": "federico.salvioni"
-        }
-    }
-]
+
