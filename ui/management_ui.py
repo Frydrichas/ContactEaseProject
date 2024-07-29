@@ -5,9 +5,32 @@ This module contains the management functions that show the CLI interface and al
 from controller.management_controller import *
 from models.contact import Contact
 from models.constants import contact_info_group
+from datetime import datetime
+
+
+def _insert_birth_date():
+    """
+    Insert the birth date in the format dd/mm/yyyy
+    """
+    inserting = True
+    birth_date = None
+    while inserting:
+        birth_date = input("Enter the birth date (dd/mm/yyyy): ")
+        if birth_date == '':
+            break
+        try:
+            datetime.strptime(birth_date, "%d/%m/%Y")
+            inserting=False
+        except ValueError:
+            print("Incorrect data format, should be dd/mm/yyyy")
+            continue
+    return birth_date
 
 
 def _insert_contact_infos():
+    """
+    Insert the contact information
+    """
     inserting = True
     contact_infos = {}
 
@@ -38,7 +61,7 @@ def ui_add_new_contact(user):
     """Add a new contact to the user's contact list."""
     first_name = input("Enter the first name: ")
     last_name = input("Enter the last name: ")
-    birth_date = input("Enter the birth date: ")
+    birth_date = _insert_birth_date()
     address = input("Enter the address: ")
     contact_note = input("Enter the contact note: ")
     contact_infos = _insert_contact_infos()
@@ -71,7 +94,7 @@ def ui_edit_contact(user):
         print("Enter the new values (leave blank to keep the old value)")
         first_name = input("Enter the first name: ") or user_contact.get_first_name()
         last_name = input("Enter the last name: ") or user_contact.get_last_name()
-        birth_date = input("Enter the birth date: ") or user_contact.get_birth()
+        birth_date = _insert_birth_date or user_contact.get_birth()
         address = input("Enter the address: ") or user_contact.get_address()
         contact_note = input("Enter the contact note: ") or user_contact.get_contact_note()
         contact_infos = _insert_contact_infos()
@@ -84,6 +107,9 @@ def ui_edit_contact(user):
 
 
 def ui_remove_contact(user):
+    """
+    Delete a contact from the user's contact list.
+    """
     fields = input("Enter the value to search: ").split(" ")
     flag = handle_delete_contact(user, fields)
     return flag
