@@ -1,5 +1,6 @@
 # **Software di una rubrica di contatti con Python <br>**
 
+
 ContactEase Solutions mira a semplificare la gestione dei contatti telefonici per i propri utenti, sviluppando un software intuitivo e interattivo che ottimizza l’organizzazione e l’accesso alle informazioni personali. <br>
 
 Gli utenti spesso trovano difficoltoso gestire e organizzare i loro contatti telefonici in modo efficiente. Esistono poche soluzioni semplici e intuitive che permettano di aggiungere, modificare, eliminare, visualizzare e cercare contatti in un unico luogo, direttamente dal terminale. <br>
