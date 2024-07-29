@@ -4,6 +4,7 @@ This module contains the welcome function that show the CLI interface and allow 
 
 from controller.login_controller import handle_login, handle_register
 
+
 def welcome():
     """Welcome the user and ask for login or register."""
 
@@ -22,9 +23,9 @@ def welcome():
         username = input("Enter your username: ")
         password = input("Enter your password: ")
         if option == '1':
-            user = handle_login(username,password)
+            user = handle_login(username, password)
         elif option == '2':
-            user = handle_register(username,password)
+            user = handle_register(username, password)
         else:
             print("Closing session")
             return option, None
