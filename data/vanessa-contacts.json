@@ -1,0 +1,23 @@
+[
+    {
+        "first_name": "fede",
+        "last_name": "salvio",
+        "birth": "29/01/1992",
+        "address": "lurate caccivio",
+        "contact_note": "compagno",
+        "contact_infos": {
+            "mobile_phone": "033123431",
+            "linkedin": "federico.salvioni"
+        }
+    },
+    {
+        "first_name": "sara",
+        "last_name": "crippa",
+        "birth": "",
+        "address": "",
+        "contact_note": "sorella",
+        "contact_infos": {
+            "email": "sara.crippa@gmail.com"
+        }
+    }
+]

@@ -20,5 +20,23 @@
             "linkedin": "nuovo_linkedin",
             "phone": "031"
         }
+    },
+    {
+        "first_name": "prova",
+        "last_name": "prova",
+        "birth": "",
+        "address": "test",
+        "contact_note": "test",
+        "contact_infos": null
+    },
+    {
+        "first_name": "due",
+        "last_name": "due",
+        "birth": "20/01/2001",
+        "address": "test",
+        "contact_note": "test",
+        "contact_infos": {
+            "work_phone": "1234"
+        }
     }
 ]
