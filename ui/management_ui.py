@@ -2,7 +2,7 @@
 This module contains the management functions that show the CLI interface and allow contact management operations
 """
 
-from controller.management_controller import *
+import controller.management_controller as mc
 from models.contact import Contact
 from models.constants import contact_info_group
 from datetime import datetime
@@ -14,6 +14,7 @@ def _insert_birth_date():
     """
     inserting = True
     birth_date = None
+
     while inserting:
         birth_date = input("Enter the birth date (dd/mm/yyyy): ")
         if birth_date == '':
@@ -67,27 +68,27 @@ def ui_add_new_contact(user):
     contact_infos = _insert_contact_infos()
 
     contact = Contact(first_name, last_name, birth_date, address, contact_note, contact_infos)
-    handle_add_contact(user, contact)
+    mc.handle_add_contact(user, contact)
     return contact
 
 
 def ui_display_all_contacts(user):
     """Display all contacts in the user's contact list."""
-    user_contacts = handle_get_contacts_by_user(user)
+    user_contacts = mc.handle_get_contacts_by_user(user)
     return user_contacts
 
 
 def ui_search_contact(user):
     """Search for a contact in the user's contact list."""
     search_values = input("Enter first name or last name: ").split(" ")
-    user_contact = handle_search_contact_by_values(user, search_values)
+    user_contact = mc.handle_search_contact_by_values(user, search_values)
     return user_contact
 
 
 def ui_edit_contact(user):
     """Edit a contact in the user's contact list."""
     search_values = input("Enter first name or last name: ").split(" ")
-    user_contact = handle_search_contact_by_values(user, search_values)
+    user_contact = mc.handle_search_contact_by_values(user, search_values)
 
     if user_contact is not None:
         print(user_contact)
@@ -103,7 +104,7 @@ def ui_edit_contact(user):
             contact_infos = user_contact.get_contact_infos()
 
         contact = Contact(first_name, last_name, birth_date, address, contact_note, contact_infos)
-        return handle_edit_contact(user, search_values, contact)
+        return mc.handle_edit_contact(user, search_values, contact)
 
 
 def ui_remove_contact(user):
@@ -111,7 +112,7 @@ def ui_remove_contact(user):
     Delete a contact from the user's contact list.
     """
     fields = input("Enter the value to search: ").split(" ")
-    flag = handle_delete_contact(user, fields)
+    flag = mc.handle_delete_contact(user, fields)
     return flag
 
 

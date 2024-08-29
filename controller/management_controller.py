@@ -3,7 +3,7 @@ Controller that exposes the address book management methods to the interface CLI
 It can be extended for a GUI or to support a frontend in a web app.
 """
 
-from service.book_address_manager import *
+import service.book_address_manager as bam
 
 
 def handle_add_contact(user,contact):
@@ -14,7 +14,7 @@ def handle_add_contact(user,contact):
         user (User): The user to whom the contact will be added.
         contact (Contact): The contact to be added.
     """
-    add_contact(user,contact)
+    bam.add_contact(user,contact)
 
 
 def handle_search_contact_by_values(user,search_values):
@@ -26,7 +26,7 @@ def handle_search_contact_by_values(user,search_values):
         search_values (list): The values to search for in the contact list.
     """
 
-    return search_contact_by_values(user,search_values)
+    return bam.search_contact_by_values(user,search_values)
 
 
 def handle_get_contacts_by_user(user):
@@ -36,7 +36,7 @@ def handle_get_contacts_by_user(user):
     Args:
         user (User): The user whose contacts will be displayed.
     """
-    user_contacts = get_contacts_by_user(user)
+    user_contacts = bam.get_contacts_by_user(user)
     return user_contacts
 
 
@@ -49,7 +49,7 @@ def handle_edit_contact(user, search_values, contact):
         search_values (list): The values to search for in the contact list.
         contact (Contact): The contact to be edited
     """
-    edit_contact(user, search_values, contact)
+    bam.edit_contact(user, search_values, contact)
     return contact
 
 
@@ -61,4 +61,4 @@ def handle_delete_contact(user,search_values):
         user (User): The user from whom the contact will be removed.
         search_values (list): The values to search for in the contact list to remove the contact.
     """
-    return delete_contact(user,search_values)
+    return bam.delete_contact(user,search_values)
